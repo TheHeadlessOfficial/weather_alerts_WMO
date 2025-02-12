@@ -22,7 +22,7 @@ Run the file `.conkyrc_alerts` from terminal (the first time you run this conky)
 
 ## Screenshot
 
-![](https://github.com/TheHeadlessOfficial/weather_alerts_WMO/blob/main/.conky/ALERTS/WMO/docs/screenshot.jpg)<br>
+![](https://github.com/TheHeadlessOfficial/weather_alerts_WMO/blob/main/.conky/weather/ALERTS/WMO/docs/screenshot.jpg)<br>
 
 
 
