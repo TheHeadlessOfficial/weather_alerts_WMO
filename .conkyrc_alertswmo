@@ -31,8 +31,8 @@ conky.config = {
 	gap_y = 10,-- u|d
 	imlib_cache_size = 0,
 	maximum_width = 400,
-	minimum_size = 350,
-	minimum_height = 300,	
+--minimum_size = 400,
+	minimum_height = 400,	
 	minimum_width = 400,
 	net_avg_samples = 2,
 	no_buffers = true,
@@ -56,7 +56,7 @@ conky.config = {
 	show_graph_scale = true,	
 	stippled_borders = 5,
 --total_run_times 0,
-	update_interval = 60,	 
+	update_interval = 600,	 
 	uppercase = false,	
 	use_spacer = 'none',	
 	use_xft = true,
@@ -66,46 +66,55 @@ conky.config = {
 
 conky.text = [[
 ########################################### load script Python - show timezone, lat and long (and background image as optional)
-#${execpi 600 python ~/.conky/weather/Openweathermap/ONECALLAPI/wmoalerts.py}
+${execpi 600 python ~/.conkyGITHUB/weather/ALERTS/WMO/wmoalerts.py}${if_existing /tmp/script_alertswmo.lock}LOADING...${else}${color}
 ########################################### write general info (in heading)
-${execpi 600 sed -n '1p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertsgen.txt}
-${execpi 600 sed -n '2p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertsgen.txt}
-${execpi 600 sed -n '3p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertsgen.txt}
+${execpi 600 sed -n '1p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsgenconky.txt}
+${execpi 600 sed -n '2p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsgenconky.txt}
+${execpi 600 sed -n '3p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsgenconky.txt}
 ########################################### write REGION alerts
-${execpi 600 sed -n '1p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertsregion.txt}
-${execpi 600 sed -n '2p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertsregion.txt}
-${execpi 600 sed -n '3p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertsregion.txt}
-${execpi 600 sed -n '4p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertsregion.txt}
-${execpi 600 sed -n '6p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertsregion.txt}
-${execpi 600 sed -n '5p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertsregion.txt}
-${execpi 600 sed -n '7p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertsregion.txt}
-${execpi 600 sed -n '8p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertsregion.txt}
-${execpi 600 sed -n '9p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertsregion.txt}
-${execpi 600 sed -n '11p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertsregion.txt}
-${execpi 600 sed -n '10p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertsregion.txt}
+${execpi 600 sed -n '1p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsregionconky.txt}
+${execpi 600 sed -n '2p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsregionconky.txt}
+${execpi 600 sed -n '3p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsregionconky.txt}
+${execpi 600 sed -n '4p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsregionconky.txt}
+${execpi 600 sed -n '5p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsregionconky.txt}
+${execpi 600 sed -n '6p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsregionconky.txt}
+${execpi 600 sed -n '7p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsregionconky.txt}
+${execpi 600 sed -n '8p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsregionconky.txt}
+${execpi 600 sed -n '9p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsregionconky.txt}
+${execpi 600 sed -n '10p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsregionconky.txt}
+${execpi 600 sed -n '11p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsregionconky.txt}
+${execpi 600 sed -n '12p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsregionconky.txt}
 ########################################### write COUNTRY alerts
-${execpi 600 sed -n '1p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertscountry.txt}
-${execpi 600 sed -n '2p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertscountry.txt}
-${execpi 600 sed -n '3p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertscountry.txt}
-${execpi 600 sed -n '4p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertscountry.txt}
-${execpi 600 sed -n '6p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertscountry.txt}
-${execpi 600 sed -n '5p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertscountry.txt}
-${execpi 600 sed -n '7p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertscountry.txt}
-${execpi 600 sed -n '8p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertscountry.txt}
-${execpi 600 sed -n '9p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertscountry.txt}
-${execpi 600 sed -n '11p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertscountry.txt}
-${execpi 600 sed -n '10p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalertscountry.txt}
+${execpi 600 sed -n '1p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertscountryconky.txt}
+${execpi 600 sed -n '2p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertscountryconky.txt}
+${execpi 600 sed -n '3p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertscountryconky.txt}
+${execpi 600 sed -n '4p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertscountryconky.txt}
+${execpi 600 sed -n '5p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertscountryconky.txt}
+${execpi 600 sed -n '6p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertscountryconky.txt}
+${execpi 600 sed -n '7p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertscountryconky.txt}
+${execpi 600 sed -n '8p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertscountryconky.txt}
+${execpi 600 sed -n '9p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertscountryconky.txt}
+${execpi 600 sed -n '10p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertscountryconky.txt}
+${execpi 600 sed -n '11p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertscountryconky.txt}
+${execpi 600 sed -n '12p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertscountryconky.txt}
 ########################################### write WORLD alerts
-${execpi 600 sed -n '1p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalerts.txt}
-${execpi 600 sed -n '2p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalerts.txt}
-${execpi 600 sed -n '3p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalerts.txt}
-${execpi 600 sed -n '4p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalerts.txt}
-${execpi 600 sed -n '6p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalerts.txt}
-${execpi 600 sed -n '5p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalerts.txt}
-${execpi 600 sed -n '7p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalerts.txt}
-${execpi 600 sed -n '8p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalerts.txt}
-${execpi 600 sed -n '9p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalerts.txt}
-${execpi 600 sed -n '11p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalerts.txt}
-${execpi 600 sed -n '10p' $HOME/.conky/weather/Openweathermap/ONECALLAPI/wmoalerts.txt}
-${color2}${hr 1}
+${execpi 600 sed -n '1p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${execpi 600 sed -n '2p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${execpi 600 sed -n '3p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${execpi 600 sed -n '4p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${execpi 600 sed -n '5p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${execpi 600 sed -n '6p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${execpi 600 sed -n '7p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${execpi 600 sed -n '8p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${execpi 600 sed -n '9p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${execpi 600 sed -n '10p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${execpi 600 sed -n '11p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${execpi 600 sed -n '12p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${execpi 600 sed -n '13p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${execpi 600 sed -n '14p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${execpi 600 sed -n '15p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${execpi 600 sed -n '16p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${execpi 600 sed -n '17p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${execpi 600 sed -n '18p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsworldconky.txt}
+${color2}${hr 1}${endif}
 ]];
