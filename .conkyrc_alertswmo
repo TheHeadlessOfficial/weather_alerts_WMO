@@ -65,7 +65,7 @@ conky.config = {
 }
 
 conky.text = [[
-########################################### load script Python - show timezone, lat and long (and background image as optional)
+########################################### load script Python
 ${execpi 600 python ~/.conkyGITHUB/weather/ALERTS/WMO/wmoalerts.py}${if_existing /tmp/script_alertswmo.lock}LOADING...${else}${color}
 ########################################### write general info (in heading)
 ${execpi 600 sed -n '1p' $HOME/.conkyGITHUB/weather/ALERTS/WMO/wmoalertsgenconky.txt}
