@@ -3,7 +3,7 @@ import requests
 import textwrap
 # Lock file to tell conky that the script is running
 lock_file = "/tmp/script_alertswmo.lock"
-# create lock file
+# Check for file lock
 try:
     open(lock_file, 'w').close()
     ################################ my API url forecast (insert it between apostrophe, DON'T delete apostrophes)
