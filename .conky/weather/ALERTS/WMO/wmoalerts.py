@@ -1,11 +1,11 @@
-import os, sys
-import requests
-import textwrap
 # Lock file to tell conky that the script is running
 lock_file = "/tmp/script_alertswmo.lock"
 # Check for file lock
 try:
     open(lock_file, 'w').close()
+    import os, sys
+    import requests
+    import textwrap
     ################################ my API url forecast (insert it between apostrophe, DON'T delete apostrophes)
     urlwmo = 'https://severeweather.wmo.int/v2/json/wmo_all.json?_=1619520362240'
     reswmo = requests.get(urlwmo).json()
