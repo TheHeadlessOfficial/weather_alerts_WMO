@@ -1,6 +1,6 @@
 # Conky ALERTS by WMO
  
-A standalone conky (written in Python) that shows the weather alerts (world, country, region), using [WMO](https://wmo.int/) website.<br>
+A conky (written in Python) that shows the weather alerts (world, country, region), using [WMO](https://wmo.int/) website.<br>
 <br>
 <br>
 
